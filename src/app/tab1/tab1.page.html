@@ -1,0 +1,25 @@
+<ion-header >
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Song List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="primary">
+  
+  <ion-searchbar showcancelbutton="onCancel($event)" (ionInput)="update($event)" placeholder="Search" [(ngModel)]="queryText"></ion-searchbar>
+     <div (click)="toSong(song.title)" *ngFor="let song of sub; let i=index">
+
+      <ion-item >
+        <h5 slot="start" color="medium" >{{i+1}}</h5>
+        <ion-label>{{song.title}}
+          <p  style="font-size: 10px; color: blue;">Composed by: {{song.composer}}</p>
+        </ion-label>
+
+    </ion-item>
+
+     </div>
+
+      
+</ion-content>

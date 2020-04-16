@@ -1,0 +1,106 @@
+<ion-header >
+  <ion-toolbar color="secondary">
+    <ion-title>
+      New Song
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="primary">
+
+  <div>
+    <ion-item >
+      <ion-label position="floating" style="font-size: 12px;">Song Title</ion-label>
+      <ion-input  [(ngModel)]="title"></ion-input>
+    </ion-item>
+    <ion-item  >
+      <ion-label position="floating" style="font-size: 12px;">Song Style (eg: Highlife, Woro, Raggae)</ion-label>
+      <ion-input [(ngModel)]="style"  ></ion-input>
+    </ion-item>
+
+ 
+        <ion-item *ngFor="let pre of preludes; let i=index" >
+      <ion-label position="floating" style="font-size: 12px;">Prelude</ion-label>
+      <ion-icon name="close" slot="end" (click)="deleteP(i)"></ion-icon>
+      <ion-input  ></ion-input>
+    </ion-item>
+
+    <ion-item *ngFor="let chorus of choruses; let i=index" >
+      <ion-label position="floating" style="font-size: 12px;">Chorus</ion-label>
+      <ion-icon name="close" slot="end" (click)="deleteC(i)"></ion-icon>
+      <ion-input  ></ion-input>
+    </ion-item>
+
+    <ion-item *ngFor="let verse of verses; let i=index" >
+      <ion-label position="floating" style="font-size: 12px;">Verse {{i+1}}</ion-label>
+      <ion-icon name="close" slot="end" (click)="deleteV(i)"></ion-icon>
+      <ion-input></ion-input>
+    </ion-item>
+ 
+  
+
+
+  </div>
+
+  
+</ion-content>
+
+
+<ion-footer no-border>
+
+  <ion-button round (click)="Prelude(1)" >
+   
+    <ion-icon name="add" slot="start" style=" height: 100%; width: 30px; font-size: 20px;"></ion-icon>
+
+<ion-label style="font-size: 10px; " >Add Prelude</ion-label>
+</ion-button >
+
+<ion-button round (click)="Chorus(1)">
+   
+  <ion-icon name="add" slot="start" style=" height: 100%; width: 30px; font-size: 20px;"></ion-icon>
+
+<ion-label style="font-size: 10px; " >Add Chorus</ion-label>
+</ion-button >
+
+<ion-button round (click)="Verse(1)">
+   
+  <ion-icon name="add" slot="start" style=" height: 100%; width: 30px; font-size: 20px;"></ion-icon>
+
+<ion-label style="font-size: 10px; " >Add Verse</ion-label>
+</ion-button >
+
+
+
+
+  <!-- <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button color="secondary"><ion-icon name="add"></ion-icon></ion-fab-button>
+
+    <ion-fab-list side="top">
+
+      <ion-button round >
+   
+        <ion-icon name="add" slot="start" style=" height: 100%; width: 30px; font-size: 20px;"></ion-icon>
+    
+    <ion-label style="font-size: 10px; " >Add Prelude</ion-label>
+    </ion-button >
+
+
+      <ion-button round >
+   
+        <ion-icon name="add" slot="start" style=" height: 100%; width: 30px; font-size: 20px;"></ion-icon>
+    
+    <ion-label style="font-size: 10px; " >Add Chorus</ion-label>
+    </ion-button >
+      
+
+      <ion-button round >
+   
+          <ion-icon name="add" slot="start" style="height: 100%; width: 30px; font-size: 20px;"></ion-icon>
+      
+      <ion-label style="font-size: 10px; " >Add Verse</ion-label>
+      </ion-button >
+
+    </ion-fab-list>
+  </ion-fab> -->
+  
+</ion-footer>
