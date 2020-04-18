@@ -4,11 +4,11 @@
       Song List
     </ion-title>
   </ion-toolbar>
+  <ion-searchbar showcancelbutton="onCancel($event)" (ionInput)="update($event)" placeholder="Search" [(ngModel)]="queryText"></ion-searchbar>
 </ion-header>
 
 <ion-content class="ion-padding" color="primary">
   
-  <ion-searchbar showcancelbutton="onCancel($event)" (ionInput)="update($event)" placeholder="Search" [(ngModel)]="queryText"></ion-searchbar>
      <div (click)="toSong(song.title)" *ngFor="let song of sub; let i=index">
 
       <ion-item >
